@@ -46,7 +46,7 @@ public class OpretKundeUI {
 
 	public void start() {
 		opretKundeStage = new Stage();
-		opretKundeStage.setTitle("Ferrari lÂnesystem");
+		opretKundeStage.setTitle("Ferrari l√•nesystem");
 		opretKundeStage.getIcons()
 				.add(new Image("https://i.pinimg.com/564x/c9/87/c8/c987c8a5c896fca22c5cfbd62edb7359.jpg"));
 
@@ -57,9 +57,9 @@ public class OpretKundeUI {
 		pane.setPrefHeight(670.0);
 		ferraripic = new ImageView();
 
-//		// SÊtter Knap 
+//		// S√¶tter Knap 
 		opretKundeBtn = new Button("Opret Kunde!");
-		// SÊtter TField
+		// S√¶tter TField
 		kundefornavnTField = new TextField();
 		kundeefternavnTField = new TextField();
 		PostnrTField = new TextField();
@@ -69,7 +69,7 @@ public class OpretKundeUI {
 		tlfTField = new TextField();
 		cprTField = new TextField();
 		mailTField = new TextField();
-		// SÊtter Label
+		// S√¶tter Label
 		opretStatusLbl = new Label();
 
 		// TField lokation
@@ -110,7 +110,7 @@ public class OpretKundeUI {
 		opretKundeStage.setResizable(false);
 		// Label lokation
 
-		// SÊtter prompt text til kun at vÊre vist nÂr et bogstav er blevet indsat
+		// S√¶tter prompt text til kun at v√¶re vist n√•r et bogstav er blevet indsat
 		mailTField.setStyle("-fx-prompt-text-fill: derive(-fx-control-inner-background, -30%);");
 		cprTField.setStyle("-fx-prompt-text-fill: derive(-fx-control-inner-background, -30%);");
 		tlfTField.setStyle("-fx-prompt-text-fill: derive(-fx-control-inner-background, -30%);");
@@ -122,7 +122,7 @@ public class OpretKundeUI {
 		kundeefternavnTField.setStyle("-fx-prompt-text-fill: derive(-fx-control-inner-background, -30%);");
 		pane.setStyle("-fx-background-color: #F40808");
 
-		// SÊtter promptText
+		// S√¶tter promptText
 		kundefornavnTField.setPromptText("Fornavn:");
 		kundeefternavnTField.setPromptText("Efternavn:");
 		mailTField.setPromptText("E-Mail:");
@@ -133,7 +133,7 @@ public class OpretKundeUI {
 		VejTField.setPromptText("Vejnavn:");
 		ByTField.setPromptText("By:");
 
-		// Implementerer at TField kun kan sÊttes til tal vÊrdier
+		// Implementerer at TField kun kan s√¶ttes til tal v√¶rdier
 		cprTField.setTextFormatter(new TextFormatter<>(c -> {
 			if (c.getControlNewText().isEmpty()) {
 				return c;
@@ -177,7 +177,7 @@ public class OpretKundeUI {
 			}
 		}));
 
-		// Font st¯rrelse pÂ TField
+		// Font st√∏rrelse p√• TField
 		opretStatusLbl.setFont(new Font(24));
 		kundeefternavnTField.setFont(new Font(14));
 		kundefornavnTField.setFont(new Font(14));
@@ -190,7 +190,7 @@ public class OpretKundeUI {
 		VejTField.setFont(new Font(14));
 		ByTField.setFont(new Font(14));
 
-		// Tilf¯jer alt til pane
+		// Tilf√∏jer alt til pane
 		pane.getChildren().addAll(kundefornavnTField, kundeefternavnTField, PostnrTField, ByTField, VejTField,
 				HusnrTField, tlfTField, cprTField, mailTField, opretKundeBtn, opretStatusLbl, ferraripic);
 
@@ -199,7 +199,7 @@ public class OpretKundeUI {
 		opretKundeStage.setScene(scene);
 		opretKundeStage.show();
 
-		// SÊtter set on action pÂ knap
+		// S√¶tter set on action p√• knap
 		opretKundeBtn.setOnAction(e -> opretKunde());
 	}
 
@@ -237,7 +237,7 @@ public class OpretKundeUI {
 	}
 
 	private void cprFejl() {
-		opretStatusLbl.setText("Der skal vÊre 10 CPR-cifre. NuvÊrende antal: " + cprTField.getText().length());
+		opretStatusLbl.setText("Der skal v√¶re 10 CPR-cifre. Nuv√¶rende antal: " + cprTField.getText().length());
 		opretStatusLbl.setTextFill(Color.WHITE);
 		opretStatusLbl.relocate(200, 490);
 	}
@@ -272,7 +272,7 @@ public class OpretKundeUI {
 	}
 
 	private void kreditRatingFejl() {
-		opretStatusLbl.setText("Kundens kreditvÊrdighed er under den tilladte graense!");
+		opretStatusLbl.setText("Kundens kreditv√¶rdighed er under den tilladte gr√¶nse!");
 		opretStatusLbl.setTextFill(Color.WHITE);
 		opretStatusLbl.relocate(175, 490);
 	}
@@ -305,7 +305,7 @@ public class OpretKundeUI {
 				annullerBtn.setText("Annuller");
 				alert.setTitle("Advarsel!");
 				alert.setHeaderText(
-						"Programmet er ved at beregne kreditvÊrdighed. Er du sikker pÂ at du vil lukke programmet?");
+						"Programmet er ved at beregne kreditv√¶rdighed. Er du sikker p√• at du vil lukke programmet?");
 				alert.initOwner(opretKundeStage);
 
 				Optional<ButtonType> result = alert.showAndWait();
